@@ -18,14 +18,14 @@ for line in stdin:
     x = None
     y = None
     z = None
-    for i in range(1, min(mn, min(V, min(W, U)))):
-
+    val =  min(mn, min(V, min(W, U)))
+    for i in range(-val, val + 1):
+        if i == 0:
+            continue
         tmp_u = U - i
         if V % i != 0:
             continue
         tmp_v = V / i
-        if i > U or i * i > W:
-            break
 
         if tmp_u ** 2 < 4 * tmp_v:
             continue

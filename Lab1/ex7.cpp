@@ -34,7 +34,7 @@ int main(){
         cin >> U >> V >> W;
         int x,y,z;
         bool found = false;
-        for(int i = 1; i < mn && !found; i++) {
+        for(int i = -mn; i < mn && !found; i++) {
             for(int j = i + 1; j < mn && i* i+ j * j <= W && !found; j++){
                 for(int k = j + 1; k < mn && i * i + j * j + k * k <= W && !found; k++){
                       if(i * i +  j * j + k * k == W && i * j * k == V && i + j + k == U ) 
