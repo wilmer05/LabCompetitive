@@ -5,20 +5,23 @@ def check_sol(U, V, W, x, y, z):
     return x + y + z == U and x * y * z == V and x ** 2 + y ** 2 + z ** 2 == W and x < y and y < z
 
 T = None
-mn = 5 * (10 ** 6)
+mn = 2.5 * (10 ** 6)
 for line in stdin:
     if T is None:
         T = int(line)
         continue
     else:
-        U, V, W = line.split()
+        try:
+            U, V, W = line.split()
+        except:
+            break
     U = int(U)
     V = int(V)
     W = int(W)
     x = None
     y = None
     z = None
-    val =  min(mn, min(V, min(W, U)))
+    val =  int(min(mn, min(V, min(W, U))))
     for i in range(-val, val + 1):
         if i == 0:
             continue
